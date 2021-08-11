@@ -154,6 +154,7 @@ def save_data(filenames,
             writer.write(src.strip() + '\n')
     with open(tgt_path, 'w', encoding='utf-8') as writer:
         for tgt in tqdm(tgts, total=len(tgts)):
+            tgt = tgt.replace('\n','<n>')  # 替换摘要中的换行符，使用数据的时候可以替换回来
             writer.write(tgt.strip() + '\n')
 
 
